@@ -1,13 +1,88 @@
-body {
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+#root {
+
+}
+
+
+.header {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header-title {
+  padding: 20px;
+}
+
+.header-link {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 11px;
+  font-size: 0.95em;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-container {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(241, 141, 141, 0.283);
+}
+
+.main-container h2 {
+  font-size: 2.5em;
+}
+
+.itemlist-container {
+  height: 35%;
+  padding: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(227, 227, 227, 0.434);
+  height: 10%;
+  color: rgb(0, 0, 0);
+}
+
+.footer p {
+  font-weight: 700;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 11px;
+  font-size: 0.95em;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
