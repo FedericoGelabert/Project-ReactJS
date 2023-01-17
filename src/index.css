@@ -12,10 +12,8 @@ html, body, #root {
   font-family: 'Inter', sans-serif;
 }
 
-#root {
 
-}
-
+/* Header */
 
 .header {
   background-color: rgb(255, 255, 255);
@@ -28,6 +26,15 @@ html, body, #root {
 
 .header-title {
   padding: 20px;
+  color: rgb(61, 183, 236);
+  text-shadow: rgb(61, 183, 236) 1px 1px 3px;
+}
+
+.header-title-a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 11px;
+  font-size: 0.95em;
 }
 
 .header-link {
@@ -43,42 +50,258 @@ html, body, #root {
   align-items: center;
 }
 
+
+/* Main - Welcome */
+
 .main-container {
-  height: 50%;
+  height: 600px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(241, 141, 141, 0.283);
+  justify-content:flex-start;
+  align-items:flex-start;
+  background-color: rgb(0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  background-position-y: -300px;
+  background-position-x: 300px;
+}
+
+.main-container img {
+  position: absolute;
+  z-index: 1;
+  top: 130px;
+  width: 900px;
+  right: 0;
 }
 
 .main-container h2 {
-  font-size: 2.5em;
+  font-size: 4em;
+  color: white;
+  z-index: 10;
+  top: 270px;
+  left: 105px;
+  position: absolute;
+  text-shadow: white 1px 1px 3px;
 }
 
-.itemlist-container {
-  height: 35%;
-  padding: 20px;
+.main-container p {
+  font-size: 1.5em;
+  color: white;
+  z-index: 10;
+  top: 345px;
+  left: 118px;
+  position: absolute;
+  text-shadow: white 1px 1px 3px;
 }
+
+.brand-name {
+  color: rgb(61, 183, 236);
+  text-shadow: rgb(61, 183, 236) 1px 1px 3px;
+}
+
+
+/* ItemList - Container */
+
+.itemlist-container {
+  z-index: 10;
+}
+
+.itemlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px;
+}
+
+.itemlist-category {
+  padding: 30px;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+}
+
+.greeting-h2 {
+  margin-bottom: 8px;
+  padding: 20px 0 0 20px;
+}
+
+.itemlist-container hr {
+  margin-bottom: 25px;
+}
+
+
+/* Item */
+
+.item-container {
+  width: 300px;
+  height: 250px;
+  margin: 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(227, 227, 227, 0.434);
+}
+
+.item-img {
+  object-fit: contain;
+  height: 150px;
+  width: 200px;
+  padding-bottom: 10px;
+}
+
+.item-name {
+  font-size: 0.7em;
+}
+
+.item-price {
+  font-size: 0.7em;
+}
+
+.item-button {
+  padding: 4px;
+  margin: 3px;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.792);
+  color: white;
+}
+
+
+/* Item Detail */
+
+.itemdetails {
+  padding: 30px;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+}
+
+.itemdetail-container {
+  padding: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.024);
+}
+
+.itemdetail-img {
+  width: 500px;
+  height: 500px;
+}
+
+.itemdetail-img img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+.itemdetail-info {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  margin: 40px;
+}
+
+.itemdetail-price {
+  margin-top: 10px;
+}
+
+.product-price {
+  color: rgba(255, 0, 0, 0.613) !important;
+}
+
+.itemdetail-button {
+  width: 100px;
+  margin: 10px;
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.792);
+  color: white;
+  
+}
+
+.itemdetail-container span {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.884);
+}
+
+.itemdetail-container p {
+  color: rgba(0, 0, 0, 0.618);
+}
+
+
+ /* Favourites */
+
+.favourites-container {
+  padding: 40px;
+}
+
+
+/* Error404 */
+
+.error-container-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 250px;
+}
+
+.error-container h1 {
+  font-size: 7em;
+}
+
+.error-container h2 {
+  padding: 30px;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+}
+
+
+.error-container p {
+    font-size: 1.5em;
+}
+
+.error-container a {
+  text-decoration: none;
+}
+
+
+
+/* Footer */
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(227, 227, 227, 0.434);
+  background-color: black;
   height: 10%;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 .footer p {
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 0.85em;
 }
 
 .footer-link {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: white;
   padding: 11px;
   font-size: 0.95em;
+  font-weight: 550;
 }
 
 .footer-nav {

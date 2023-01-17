@@ -1,21 +1,20 @@
 import Header from "./Header";
 import Main from "./Main";
-import ItemListContainer from "./ItemListContainer";
 import Footer from "./Footer"
+import { BrowserRouter } from "react-router-dom";
 const itemsInCart = 0;
 
 
 function App() {
   
   return (
-    <>
+    <BrowserRouter>
       <Header/>
       <Main/>
-      <ItemListContainer greeting="Hi, we invite you to select one of our products!"/>
       <Footer/>
-    </> 
+    </BrowserRouter>
   );
 }
 
 export default App;
-export {  itemsInCart };
+export { itemsInCart }
