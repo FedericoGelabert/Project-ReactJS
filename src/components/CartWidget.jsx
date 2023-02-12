@@ -1,32 +1,18 @@
-
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { itemsInCart } from './App'
+import { NavLink } from 'react-router-dom';
+import { useCart } from './CartContext'
 
 const CartWidget = () => {
 
-
-    const notify = () => {
-        toast.info('You have ' + itemsInCart + ' items in the cart.', {
-            position: "bottom-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: false,
-            draggable: false,
-            progress: undefined,
-            theme: "dark",
-            })
-    }
+    const { allProducts } = useCart()
 
     return (
-        <>
-            <span className="material-icons" onClick={notify}>shopping_cart</span>
-            <ToastContainer />
-        </>
+        <div className='cart-widget-container'>
+            <p style={{ color: 'black', textDecoration: 'none' }}>{allProducts() || ""}</p>
+            <NavLink to="/cart" className='cart-widget-a'>
+                <span style={{ color: 'black' }} className="material-icons">shopping_cart</span>
+            </NavLink>
+        </div>
     )
 }
-
 
 export default CartWidget

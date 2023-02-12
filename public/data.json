@@ -5,6 +5,7 @@
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673973450/react-project/acer-aspire-5_m3t7sp.png",
         "name": "Acer Aspire 5 A515-56-32DK Slim Laptop",
         "price": 325.99,
+        "price_discount": 612.99,
         "category": "laptop",
         "brand": "Acer",
         "screen_size": "15.6",
@@ -13,7 +14,8 @@
         "cpu_model": "Core i3",
         "ram_memory": "4",
         "operating_system": "Windows 11 Home",
-        "graphics_coprocessor": "Intel UHD Graphics"
+        "graphics_coprocessor": "Intel UHD Graphics",
+        "stock": "13"
     },
     {
         "id": 2,
@@ -25,13 +27,15 @@
         "series": "IPad",
         "memory_storage": "32",
         "screen_size": "9.7",
-        "resolution": "2048 x 1536"
+        "resolution": "2048 x 1536",
+        "stock": "4"
     },
     {
         "id": 3,
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673973616/react-project/lenovo-2022_fc0gzs.png",
         "name": "Lenovo 2022 Newest Ideapad 3 Laptop",
         "price": 384.00,
+        "price_discount": 400.87,
         "category": "laptop",
         "brand": "Lenovo",
         "screen_size": "15.6",
@@ -40,7 +44,8 @@
         "cpu_model": "Core i3",
         "ram_memory": "20",
         "operating_system": "Windows 11",
-        "graphics_coprocessor": "Intel UHD Graphics"
+        "graphics_coprocessor": "Intel UHD Graphics",
+        "stock": "3"
 
     },
     {
@@ -56,7 +61,8 @@
         "cpu_model": "Celeron N4020",
         "ram_memory": "4",
         "operating_system": "Chrome OS",
-        "graphics_coprocessor": "Intel Integrated Graphics"
+        "graphics_coprocessor": "Intel Integrated Graphics",
+        "stock": "2"
     },
     {
         "id": 5,
@@ -68,13 +74,15 @@
         "series": "Galaxy Tab A8",
         "memory_storage": "32",
         "screen_size": "10.5",
-        "resolution": "1920 x 1200"
+        "resolution": "1920 x 1200",
+        "stock": "9"
     },
     {
         "id": 6,
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673975804/react-project/laptop-3_b48sqn.png",
         "name": "ASUS Laptop L210 11.6” Ultra Thin",
         "price": 147.00,
+        "price_discount": 220.66,
         "category": "laptop",
         "brand": "ASUS",
         "screen_size": "11.6",
@@ -83,7 +91,8 @@
         "cpu_model": "Celeron N4020",
         "ram_memory": "4",
         "operating_system": "Windows 10",
-        "graphics_coprocessor": "Intel UHD Graphics 600"
+        "graphics_coprocessor": "Intel UHD Graphics 600",
+        "stock": "20"
     },
     {
         "id": 7,
@@ -95,13 +104,15 @@
         "series": "Galaxy Tab A7 Lite",
         "memory_storage": "32",
         "screen_size": "8.7",
-        "resolution": "1340 x 800"
+        "resolution": "1340 x 800",
+        "stock": "35"
     },
     {
         "id": 8,
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673975966/react-project/laptop-4_d8xsmg.png",
         "name": "SGIN Laptop 15.6 Inch 12GB",
         "price": 359.98,
+        "price_discount": 380.99,
         "category": "laptop",
         "brand": "SGIN",
         "screen_size": "14.1",
@@ -110,7 +121,8 @@
         "cpu_model": "Celeron",
         "ram_memory": "12",
         "operating_system": "Windows 11 Home",
-        "graphics_coprocessor": "Intel HD Graphics 520"
+        "graphics_coprocessor": "Intel HD Graphics 520",
+        "stock": "55"
     },
     {
         "id": 9,
@@ -125,19 +137,22 @@
         "cpu_model": "Intel Core i5-1135G7",
         "ram_memory": "8",
         "operating_system": "Windows 11 Home",
-        "graphics_coprocessor": "Intel UHD Graphics"
+        "graphics_coprocessor": "Intel UHD Graphics",
+        "stock": "8"
     },
     {
         "id": 10,
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673976287/react-project/tablet-4_jpsxjc.png",
         "name": "Apple iPad Mini 4 (Renewed)",
         "price": 194.00,
+        "price_discount": 300.16,
         "category": "tablet",
         "brand": "Apple",
         "series": "IPad Mini 4",
         "memory_storage": "128",
         "screen_size": "7.9",
-        "resolution": "2048 x 1536"
+        "resolution": "2048 x 1536",
+        "stock": "14"
     },
     {
         "id": 11,
@@ -149,7 +164,8 @@
         "series": "Apple iPad Air 2",
         "memory_storage": "16",
         "screen_size": "9.7",
-        "resolution": "2048 x 1536"
+        "resolution": "2048 x 1536",
+        "stock": "21"
     },
     {
         "id": 12,
@@ -161,13 +177,15 @@
         "series": "Apple iPad Air 2",
         "memory_storage": "64",
         "screen_size": "10",
-        "resolution": "1280 x 800"
+        "resolution": "1280 x 800",
+        "stock": "68"
     },
     {
         "id": 13,
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673976705/react-project/laptop-6png_v8ppid.png",
         "name": "HP Victus 15 Gaming Laptop",
         "price": 699.00,
+        "price_discount": 950.45,
         "category": "laptop",
         "brand": "HP",
         "screen_size": "15.6",
@@ -176,7 +194,8 @@
         "cpu_model": "Core i5",
         "ram_memory": "8",
         "operating_system": "Windows 11 Home",
-        "graphics_coprocessor": "NVIDIA GeForce RTX 3050"
+        "graphics_coprocessor": "NVIDIA GeForce RTX 3050",
+        "stock": "6"
     },
     {
         "id": 14,
@@ -191,19 +210,22 @@
         "cpu_model": "Core i5",
         "ram_memory": "8",
         "operating_system": "Windows 11",
-        "graphics_coprocessor": "NVIDIA GeForce GTX 1650"
+        "graphics_coprocessor": "NVIDIA GeForce GTX 1650",
+        "stock": "5"
     },
     {
         "id": 15,
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673976920/react-project/tablet-7_dr35cu.png",
         "name": "New Microsoft Surface Go 2",
         "price": 281.82,
+        "price_discount": 300.87,
         "category": "tablet",
         "brand": "Microsoft",
         "series": "Srfc Prjct V-5 SC Hdwr Platinum",
         "memory_storage": "64",
         "screen_size": "10.5",
-        "resolution": "1920 x 1280"
+        "resolution": "1920 x 1280",
+        "stock": "12"
     },
     {
         "id": 16,
@@ -218,7 +240,8 @@
         "cpu_model": "Core i5 Family",
         "ram_memory": "12",
         "operating_system": "Windows 11",
-        "graphics_coprocessor": "Integrated"
+        "graphics_coprocessor": "Integrated",
+        "stock": "19"
     },
     {
         "id": 17,
@@ -233,19 +256,22 @@
         "cpu_model": "Core i7",
         "ram_memory": "16",
         "operating_system": "Windows 11 Home",
-        "graphics_coprocessor": "Intel Iris Xe"
+        "graphics_coprocessor": "Intel Iris Xe",
+        "stock": "4"
     },
     {
         "id": 18,
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673977492/react-project/tablet-8_vbhwdk.png",
         "name": "Lenovo Tab M10 Plus (3rd Gen)",
         "price": 210.04,
+        "price_discount": 260.99,
         "category": "tablet",
         "brand": "Lenovo",
         "series": "Tab M10 Plus 3rd Gen",
         "memory_storage": "128",
         "screen_size": "10.61",
-        "resolution": "2000 x 1200"
+        "resolution": "2000 x 1200",
+        "stock": "11"
     },
     {
         "id": 19,
@@ -257,13 +283,15 @@
         "series": "M10",
         "memory_storage": "32",
         "screen_size": "10",
-        "resolution": "1280 x 800"
+        "resolution": "1280 x 800",
+        "stock": "50"
     },
     {
         "id": 20,
         "img": "https://res.cloudinary.com/federicog/image/upload/v1673977347/react-project/laptop-10_ihktaw.png",
         "name": "HP Victus 15.6 Gaming Laptop PC",
         "price": 852.98,
+        "price_discount": 1104.89,
         "category": "laptop",
         "brand": "HP",
         "screen_size": "15.6",
@@ -272,6 +300,7 @@
         "cpu_model": "AMD Ryzen 7 5800H",
         "ram_memory": "16",
         "operating_system": "Windows 11 Home",
-        "graphics_coprocessor": "NVIDIA GeForce RTX 3050"
+        "graphics_coprocessor": "NVIDIA GeForce RTX 3050",
+        "stock": "17"
     }
 ]

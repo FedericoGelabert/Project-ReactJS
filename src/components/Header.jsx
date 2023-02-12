@@ -7,7 +7,7 @@ const Header = () => {
             <Link to="/" className="header-title-a">
                 <h1 className="header-title">BuyIt!</h1>
             </Link>
-            <NavBar navHeader={true}/>
+            <NavBar navHeader={true} />
         </header>
     )
 }
