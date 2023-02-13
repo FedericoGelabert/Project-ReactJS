@@ -9,7 +9,7 @@ const NavBar = (props) => {
                 <NavLink className="header-link" to="/">Home</NavLink>
                 <NavLink className="header-link" to="/category/laptop">Laptop</NavLink>
                 <NavLink className="header-link" to="/category/tablet">Tablet</NavLink>
-                <NavLink className="header-link" to="/favourites">Favourites</NavLink>
+                <NavLink className="header-link" to="/contact">Contact</NavLink>
                 <NavLink to="/cart"><CartWidget /></NavLink>
             </nav>
         )

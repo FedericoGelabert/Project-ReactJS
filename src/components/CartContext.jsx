@@ -22,17 +22,20 @@ const CustomProvider = ({ children }) => {
             theme: "dark",
         })
         if (isInCart(product.id)) {
-            setCart(cart.map(prod => {
-                return prod.id === product.id ? { ...product, quantity: prod.quantity + quantity } : product
-            }))
+            setCart(
+                cart.map(prod => {
+                    if (prod.id === product.id) {
+                        return { ...prod, quantity: prod.quantity + quantity }
+                    }
+                    return prod;
+                })
+            );
         } else {
             setCart([...cart, { ...product, quantity }])
             setNotProducts(false)
         }
 
     }
-
-    console.log(cart)
 
     const removeProduct = (id) => {
         toast.error('Product removed.', {
@@ -41,8 +44,13 @@ const CustomProvider = ({ children }) => {
             closeOnClick: true,
             theme: "dark",
         })
-        const filterProduct = cart.filter(product => product.id !== id) 
+        const filterProduct = cart.filter(product => product.id !== id)
         setCart(filterProduct)
+        if(cart.length === 1) {
+            setNotProducts(true)
+        } else {
+            setNotProducts(false)
+        }
     }
 
     const clearCart = () => {
@@ -53,27 +61,28 @@ const CustomProvider = ({ children }) => {
             theme: "dark",
         })
         setCart([])
+        setNotProducts(true)
     }
 
     const isInCart = (id) => cart.find(prod => prod.id === id) ? true : false;
     const allProducts = () => cart.reduce((acc, currentProduct) => acc + currentProduct.quantity, 0)
-    const allPrice = () => cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
+    const subTotalPrice = () => cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
 
     const contextValue = {
         cart,
         notProducts,
         allProducts,
-        allPrice,
+        subTotalPrice,
         addProduct,
         removeProduct,
         clearCart,
-        isInCart
+        isInCart,
     }
 
     return (
-            <Provider value={contextValue}>
-                {children}
-            </Provider>
+        <Provider value={contextValue}>
+            {children}
+        </Provider>
     )
 }
 

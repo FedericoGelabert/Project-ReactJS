@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const ItemDetail = ({ product }) => {
 
     const { addProduct } = useCart()
-    const [ cartLink, setCartLink ] = useState(false)
+    const [cartLink, setCartLink] = useState(false)
 
     function onAdd(quantity) {
         addProduct(product, quantity)
@@ -22,7 +22,7 @@ const ItemDetail = ({ product }) => {
                 </div>
                 <div className="itemdetail-info">
                     <p className="itemdetail-name">{product.name}</p>
-                    <hr style={{marginBottom:10}}/>
+                    <hr style={{ marginBottom: 10 }} />
                     <p><span>Brand:</span> {product.brand}</p>
                     <p><span>Color:</span> {product.color}</p>
                     <p><span>Screen Size:</span> {product.screen_size} Inches</p>
@@ -34,8 +34,8 @@ const ItemDetail = ({ product }) => {
 
                     <p className="itemdetail-stock"><span>Stock:</span> {product.stock}</p>
                     <p><span>Price: </span><s>{product.price_discount}</s><span className="product-price"> ${product.price}</span></p>
-                    { cartLink ? <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link> : <ItemCount stock={product.stock} onAdd={onAdd} />}
-                    
+                    {cartLink ? <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link> : <ItemCount stock={product.stock} onAdd={onAdd} />}
+
                 </div>
             </div>
         )
@@ -48,7 +48,7 @@ const ItemDetail = ({ product }) => {
                 </div>
                 <div className="itemdetail-info">
                     <p className="itemdetail-name">{product.name}</p>
-                    <hr style={{marginBottom:10}}/>
+                    <hr style={{ marginBottom: 10 }} />
                     <p><span>Brand:</span> {product.brand}</p>
                     <p><span>Series:</span> {product.series}</p>
                     <p><span>Screen Size:</span> {product.screen_size} Inches</p>
@@ -57,7 +57,7 @@ const ItemDetail = ({ product }) => {
 
                     <p className="itemdetail-stock"><span>Stock:</span> {product.stock}</p>
                     <p><span>Price: </span><s>{product.price_discount}</s><span className="product-price"> ${product.price}</span></p>
-                    { cartLink ? <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link> : <ItemCount stock={product.stock} onAdd={onAdd} />}
+                    {cartLink ? <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link> : <ItemCount stock={product.stock} onAdd={onAdd} />}
                 </div>
             </div>
         )

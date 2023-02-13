@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
                 return product
             }).then((product) => {
                 if (params.id) {
-                    const filterProducts = product.find((product) => product.id == params.id)
+                    const filterProducts = product.find((product) => product.id === params.id)
                     setProduct(filterProducts)
                 } else if (!params.id) {
                     toast.error('Not founded.', {

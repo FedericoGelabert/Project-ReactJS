@@ -3,6 +3,8 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer = (props) => {
 
@@ -11,18 +13,23 @@ const ItemListContainer = (props) => {
 
     useEffect(() => {
 
-        fetch('../data.json')
+        const productsCollection = collection(db, "products")
+        const firestoreOrder = getDocs(productsCollection)
+        console.log(firestoreOrder)
+
+        firestoreOrder
             .then((res) => {
-                const products = res.json()
-                return products
-            }).then((products) => {
-                if (params.categoryId) {
+                if(params.categoryId) {
+                    const products = res.docs.map(doc => ( {...doc.data(), id: doc.id}))
                     const filterProducts = products.filter((product) => product.category.includes(params.categoryId))
                     setProducts(filterProducts)
-                } else if (!params.categoryId) {
+                    console.log(products)
+                } else if(!params.categoryId){
+                    const products = res.docs.map(doc => ( {...doc.data(), id: doc.id}))
                     setProducts(products)
                 }
-            }).catch((err) => {
+            })
+            .catch((err)=> {
                 toast.error(err, {
                     position: "bottom-right",
                     autoClose: 2000,
@@ -31,14 +38,11 @@ const ItemListContainer = (props) => {
                     theme: "dark",
                 })
             })
-
     }, [params.categoryId]);
 
     if (!params.categoryId) {
         return (
             <div className="itemlist-container">
-                <h2 className="greeting-h2">{props.greeting}</h2>
-                <hr></hr>
                 <div className="itemlist">
                     <ItemList products={products} />
                 </div>
