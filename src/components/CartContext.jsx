@@ -30,12 +30,14 @@ const CustomProvider = ({ children }) => {
                     return prod;
                 })
             );
+            console.log(product.id)
         } else {
             setCart([...cart, { ...product, quantity }])
             setNotProducts(false)
         }
 
     }
+    
 
     const removeProduct = (id) => {
         toast.error('Product removed.', {

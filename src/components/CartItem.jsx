@@ -3,6 +3,7 @@ import { useCart } from "./CartContext"
 const CartItem = ({ product, id }) => {
 
     const { removeProduct } = useCart()
+    const subTotal = product.quantity * product.price
 
     return (
         <div>
@@ -24,7 +25,7 @@ const CartItem = ({ product, id }) => {
                 </div>
                 <div className="cart-card-subtotal" style={{ display: 'flex', flexDirection: 'column', textAlign: 'center', margin: 10 }}>
                     <p>Total: </p>
-                    <span>${product.quantity * product.price}</span>
+                    <span>${subTotal.toFixed(2)}</span>
                 </div>
             </div>
         </div>

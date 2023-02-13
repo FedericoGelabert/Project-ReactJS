@@ -5,6 +5,7 @@ const Checkout = () => {
 
     const { cart, allProducts, subTotalPrice } = useCart()
     const shipping = 49.99
+    const totalPrice = subTotalPrice() + shipping
 
     return (
         <div>
@@ -15,17 +16,19 @@ const Checkout = () => {
                     <div className="checkout-inputs-header">
                         <h4>Payment Information</h4>
                     </div>
-                    <hr style={{marginBottom:'15px'}}/>
-                    <div className="checkout-inputs">
-                        <input type="text" placeholder="Name" required />
-                        <input type="text" placeholder="Surname" required />
-                        <input type="tel" placeholder="Phone Number" required />
-                        <input type="email" placeholder="Email" required />
-                        <input type="email" placeholder="Repeat email" required />
-                    </div>
-                    <div className="checkout-submit">
-                        <input type="submit" placeholder="Sumbit"/>
-                    </div>
+                    <hr style={{ marginBottom: '15px' }} />
+                    <form>
+                        <div className="checkout-inputs">
+                            <input type="text" placeholder="Name" required />
+                            <input type="text" placeholder="Surname" required />
+                            <input type="tel" placeholder="Phone Number" required />
+                            <input type="email" placeholder="Email" required />
+                            <input type="email" placeholder="Repeat email" required />
+                        </div>
+                        <div className="checkout-submit">
+                            <button type="submit">Confirm</button>
+                        </div>
+                    </form>
                 </div>
                 <div className="checkout-details-container">
                     <div>
@@ -34,9 +37,9 @@ const Checkout = () => {
                             <p>Item(s): <strong>{allProducts()}</strong></p>
                         </div>
                         <hr />
-                        {cart.map((product) => {
+                        {cart.map((product, index) => {
                             return (
-                                <div className="checkout-details-products" key={product.id}>
+                                <div className="checkout-details-products" key={index}>
                                     <img src={product.img} alt={product.name}></img>
                                     <div className="checkout-details-products-info">
                                         <div className="checkout-details-products-name-price">
@@ -61,7 +64,7 @@ const Checkout = () => {
                             <hr />
                             <div>
                                 <p>Total: </p>
-                                <strong>${subTotalPrice() + shipping}</strong>
+                                <strong>${totalPrice.toFixed(2)}</strong>
                             </div>
                         </div>
                     </div>

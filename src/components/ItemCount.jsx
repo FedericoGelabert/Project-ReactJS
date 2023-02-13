@@ -35,7 +35,7 @@ const ItemCount = ({ stock, onAdd }) => {
                 <button className="counter-add" onClick={handleAdd}>+</button>
             </div>
             <button className="itemdetail-button" onClick={handleSure}>Buy</button>
-            <button className={isActive ? 'confirm-active' : 'confirm-disable'} onClick={handleConfirm}>Add to Cart</button>
+            <button className={isActive ? 'confirm-active' : 'confirm-disable'} onClick={handleConfirm}>Confirm</button>
         </div>
     )
 }

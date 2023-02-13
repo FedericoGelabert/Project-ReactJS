@@ -76,27 +76,27 @@ a {
 .main-container img {
   position: absolute;
   z-index: 1;
-  top: 120px;
-  width: 950px;
+  top: 60px;
+  width: 1050px;
   right: 0;
 }
 
 .main-container h2 {
-  font-size: 4em;
+  font-size: 5em;
   color: white;
   z-index: 10;
   top: 270px;
-  left: 105px;
+  left: 125px;
   position: absolute;
   text-shadow: white 1px 1px 3px;
 }
 
 .main-container p {
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: white;
   z-index: 10;
-  top: 345px;
-  left: 118px;
+  top: 360px;
+  left: 155px;
   position: absolute;
   text-shadow: white 1px 1px 3px;
 }
@@ -144,6 +144,10 @@ a {
   flex-direction: column;
   align-items: center;
   background-color: rgba(227, 227, 227, 0.938);
+  animation-name: aparition-box;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .item-img {
@@ -203,6 +207,7 @@ a {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.024);
+  
 }
 
 .itemdetail-img {
@@ -213,6 +218,12 @@ a {
   align-items: center;
 }
 
+.itemdetail-img img {
+  width: 600px;
+  height: 500px;
+  object-fit: contain;
+}
+
 .itemdetail-name {
   font-size: 2em;
   font-weight: 500;
@@ -220,11 +231,6 @@ a {
   max-width: 80%;
 }
 
-.itemdetail-img img {
-  width: 500px;
-  height: 500px;
-  object-fit: contain;
-}
 
 .itemdetail-info {
   display: flex;
@@ -232,7 +238,8 @@ a {
   align-items: left;
   justify-content: center;
   margin: 40px;
-  width: 40%;
+  margin-left: 100px;
+  width: 35%;
 }
 
 .itemdetail-stock {
@@ -248,14 +255,12 @@ a {
   padding: 4px;
   border: 1px solid black;
   border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.792);
+  background-color: black;
   color: white;
   transition: 1s;
   font-weight: 700;
-}
-
-.itemdetail-button:hover {
-  background-color: black;
+  z-index: 10;
+  position: relative;
 }
 
 .go-to-cart-button {
@@ -285,7 +290,7 @@ a {
 }
 
 .confirm-active {
-  animation-name: aparition-box;
+  animation-name: aparition-confirm;
   animation-iteration-count: 1;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -293,16 +298,18 @@ a {
   padding: 4px;
   border: 1px solid black;
   border-radius: 3px;
-  background-color: rgba(155, 236, 125, 0.792);
-  color: black;
+  background-color: black;
+  color: white;
   font-weight: 700;
   margin-left: 15px;
   transition: 1s;
+  position: relative;
+  z-index: 1;
 }
 
 .confirm-active:hover {
-  color: white;
-  background-color: black;
+  background-color: white;
+  color: black;
 }
 
 .confirm-disable {
@@ -599,7 +606,7 @@ a {
   background-color: rgba(0, 0, 0, 0.038);
 }
 
-.checkout-submit input {
+.checkout-submit button {
   padding: 6px;
   margin: 30px;
   border: 1px solid black;
@@ -717,4 +724,15 @@ a {
   100% {
     opacity: 1;
     padding: 5px; } 
+  }
+
+  @keyframes aparition-confirm {
+    0% { 
+      opacity: 0;
+      right: 130px;
+    }
+    100% { 
+      opacity: 1;
+      right: 0;
+    }
   }

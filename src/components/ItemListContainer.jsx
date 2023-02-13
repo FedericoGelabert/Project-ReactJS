@@ -15,7 +15,6 @@ const ItemListContainer = (props) => {
 
         const productsCollection = collection(db, "products")
         const firestoreOrder = getDocs(productsCollection)
-        console.log(firestoreOrder)
 
         firestoreOrder
             .then((res) => {
@@ -23,7 +22,6 @@ const ItemListContainer = (props) => {
                     const products = res.docs.map(doc => ( {...doc.data(), id: doc.id}))
                     const filterProducts = products.filter((product) => product.category.includes(params.categoryId))
                     setProducts(filterProducts)
-                    console.log(products)
                 } else if(!params.categoryId){
                     const products = res.docs.map(doc => ( {...doc.data(), id: doc.id}))
                     setProducts(products)

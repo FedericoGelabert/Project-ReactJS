@@ -6,6 +6,9 @@ const Cart = () => {
 
     const { cart, clearCart, notProducts, subTotalPrice, allProducts } = useCart()
     const shipping = 49.99
+    const totalPrice = subTotalPrice() + shipping
+
+    console.log(cart)
 
     return (
         <div>
@@ -32,7 +35,7 @@ const Cart = () => {
             <div className="container-all-products">
                 {cart.map((product, index) => {
                     return (
-                        <CartItem key={index} id={product.id} product={product} />
+                        <CartItem key={index} product={product} />
                     )
                 })
                 }
@@ -54,7 +57,7 @@ const Cart = () => {
                             <hr />
                             <div className="checkout-div">
                                 <p>Total: </p>
-                                <p><strong>${subTotalPrice() + shipping}</strong></p>
+                                <p><strong>${totalPrice.toFixed(2)}</strong></p>
                             </div>
                             <div className="checkout-container-button">
                                 <Link to='/checkout'>
