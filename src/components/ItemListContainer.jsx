@@ -18,16 +18,16 @@ const ItemListContainer = (props) => {
 
         firestoreOrder
             .then((res) => {
-                if(params.categoryId) {
-                    const products = res.docs.map(doc => ( {...doc.data(), id: doc.id}))
+                if (params.categoryId) {
+                    const products = res.docs.map(doc => ({ ...doc.data(), id: doc.id }))
                     const filterProducts = products.filter((product) => product.category.includes(params.categoryId))
                     setProducts(filterProducts)
-                } else if(!params.categoryId){
-                    const products = res.docs.map(doc => ( {...doc.data(), id: doc.id}))
+                } else if (!params.categoryId) {
+                    const products = res.docs.map(doc => ({ ...doc.data(), id: doc.id }))
                     setProducts(products)
                 }
             })
-            .catch((err)=> {
+            .catch((err) => {
                 toast.error(err, {
                     position: "bottom-right",
                     autoClose: 2000,
@@ -57,6 +57,5 @@ const ItemListContainer = (props) => {
         )
     }
 }
-
 
 export default ItemListContainer;

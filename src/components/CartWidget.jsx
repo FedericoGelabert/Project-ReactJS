@@ -10,6 +10,6 @@ const CartWidget = () => {
             <span style={{ color: 'black' }} className="material-icons">shopping_cart</span>
         </div>
     )
-}   
+}
 
 export default CartWidget

@@ -3,7 +3,6 @@ import { useCart } from "./CartContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 const ItemDetail = ({ product }) => {
 
     const { addProduct } = useCart()
@@ -13,7 +12,7 @@ const ItemDetail = ({ product }) => {
         addProduct(product, quantity)
         setCartLink(true)
     }
-
+    
     if (product.category === "laptop") {
         return (
             <div key={product.id} className="itemdetail-container">
@@ -35,7 +34,6 @@ const ItemDetail = ({ product }) => {
                     <p className="itemdetail-stock"><span>Stock:</span> {product.stock}</p>
                     <p><span>Price: </span><s>{product.price_discount}</s><span className="product-price"> ${product.price}</span></p>
                     {cartLink ? <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link> : <ItemCount stock={product.stock} onAdd={onAdd} />}
-
                 </div>
             </div>
         )

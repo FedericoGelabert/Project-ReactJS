@@ -17,9 +17,11 @@ const CustomProvider = ({ children }) => {
     const addProduct = (product, quantity) => {
         toast.success('Product added.', {
             position: "bottom-right",
-            autoClose: 1000,
+            autoClose: 800,
             closeOnClick: true,
             theme: "dark",
+            pauseOnHover: false,
+            delay: 10
         })
         if (isInCart(product.id)) {
             setCart(
@@ -30,14 +32,12 @@ const CustomProvider = ({ children }) => {
                     return prod;
                 })
             );
-            console.log(product.id)
         } else {
             setCart([...cart, { ...product, quantity }])
             setNotProducts(false)
         }
 
     }
-    
 
     const removeProduct = (id) => {
         toast.error('Product removed.', {
@@ -48,7 +48,7 @@ const CustomProvider = ({ children }) => {
         })
         const filterProduct = cart.filter(product => product.id !== id)
         setCart(filterProduct)
-        if(cart.length === 1) {
+        if (cart.length === 1) {
             setNotProducts(true)
         } else {
             setNotProducts(false)
@@ -66,6 +66,11 @@ const CustomProvider = ({ children }) => {
         setNotProducts(true)
     }
 
+    const clearCartAfterBuy = () => {
+        setCart([])
+        setNotProducts(true)
+    }
+
     const isInCart = (id) => cart.find(prod => prod.id === id) ? true : false;
     const allProducts = () => cart.reduce((acc, currentProduct) => acc + currentProduct.quantity, 0)
     const subTotalPrice = () => cart.reduce((prev, act) => prev + act.quantity * act.price, 0)
@@ -78,6 +83,7 @@ const CustomProvider = ({ children }) => {
         addProduct,
         removeProduct,
         clearCart,
+        clearCartAfterBuy,
         isInCart,
     }
 

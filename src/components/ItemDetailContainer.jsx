@@ -7,7 +7,6 @@ import { db } from "../firebase";
 import 'react-toastify/dist/ReactToastify.css';
 import { collection, doc, getDoc } from "firebase/firestore";
 
-
 const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState({})
@@ -19,10 +18,8 @@ const ItemDetailContainer = () => {
         const reference = doc(productsCollection, id)
         const firebaseOrder = getDoc(reference)
 
-        console.log(id)
-
         firebaseOrder
-            .then((res)=> {
+            .then((res) => {
                 const product = res.data()
                 setProduct(product)
             })
@@ -38,7 +35,6 @@ const ItemDetailContainer = () => {
 
     }, [id])
 
-
     return (
         <div>
             <p className="itemdetails">Product Details</p>
@@ -46,6 +42,5 @@ const ItemDetailContainer = () => {
         </div>
     )
 }
-
 
 export default ItemDetailContainer;

@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import CartContext from "./CartContext";
 import { ToastContainer } from "react-toastify";
 
-
 function App() {
 
   return (
