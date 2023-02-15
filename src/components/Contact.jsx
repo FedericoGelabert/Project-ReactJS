@@ -1,17 +1,37 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from 'sweetalert2-react-content';
 
 const Contact = () => {
 
+    const [submitDisabled, setSubmitDisabled] = useState(true)
     const MySwal = withReactContent(Swal)
+    const navigate = useNavigate();
+
+    const returnHome = () => {
+        navigate("/")
+    }
 
     const contactSubmit = (e) => {
         e.preventDefault()
-        return MySwal.fire({
-            icon: 'success',
-            title: <p>Sended successfully</p>,
-            text: "We'll be in contact with you soon!"
-        })
+        if(submitDisabled === false) {
+            return MySwal.fire({
+                icon: 'success',
+                title: <p>Sended successfully</p>,
+                text: "We'll be in contact with you soon!",
+                confirmButtonText: <p onClick={returnHome}>OK!</p>
+            })
+        }
+
+    }
+
+    const submitActive = (e) => {
+        if(e.target.value.length >= 50) {
+            setSubmitDisabled(false)
+        } else {
+            setSubmitDisabled(true) 
+        }
     }
 
     return (
@@ -23,14 +43,20 @@ const Contact = () => {
                     <hr />
                     <form className="contact-form">
                         <div className="form-inputs">
-                            <input type="text" placeholder="Name" style={{marginTop: '20px'}}/>
-                            <input type="email" placeholder="Email" style={{marginBottom: '20px'}}/>
+                            <input type="text" placeholder="Name" style={{marginTop: '20px'}} required/>
+                            <input type="email" placeholder="Email" required/>
+                            <input type="text" placeholder="Subject" style={{marginBottom: '20px'}}/>
                         </div>
                         <div className="form-textarea">
-                            <textarea name="message" cols="30" rows="10" maxlength="100" placeholder="Introduce your message..."></textarea>
+                            <textarea name="message" cols="30" rows="10" maxLength="150" placeholder="Type your message here..." onKeyUp={submitActive}></textarea>
                         </div>
+                        <p className="textarea-characters">Max. 150 characters.</p>
                         <div className="form-buttons">
-                            <button type="submit" onClick={contactSubmit}>Submit</button>
+                            {
+                                submitDisabled ? 
+                                <button type="submit" style={{backgroundColor:'rgb(180,180,180)'}} onClick={contactSubmit} disabled={submitDisabled}>Submit</button> :
+                                <button type="submit" style={{backgroundColor:'rgb(255,80,80)'}} onClick={contactSubmit} disabled={submitDisabled}>Submit</button>
+                            }
                             <button type="reset">Reset</button>
                         </div>
                     </form>

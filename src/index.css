@@ -57,6 +57,16 @@ a {
   align-items: center;
 }
 
+.header-nav a {
+  color: black;
+}
+
+.activeNav {
+  font-weight: 700;
+  background-color: #EAE5E3;
+  border-radius: 10px;
+}
+
 .cart-widget-container {
   display: flex;
   align-items: center;
@@ -64,6 +74,7 @@ a {
 
 .cart-widget-container p {
   font-size: 0.75em;
+  margin-left: 5px;
 }
 
 .main-container {
@@ -754,9 +765,9 @@ a {
 .form-textarea {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
   color: black;
-  font-weight: 600;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-textarea textarea {
@@ -764,6 +775,14 @@ a {
   max-width: 90%;
   max-height: 150px;
   padding: 5px;
+  border: 2px solid black;
+}
+
+.textarea-characters {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.526);
+  padding: 5px;
+  margin: 0px 0px 15px 30px;
 }
 
 .form-buttons {
@@ -784,11 +803,7 @@ a {
   color: white;
   font-weight: 600;
   transition: 1s;
-}
-
-.form-buttons button:hover {
-  background-color: white;
-  color: black;
+  cursor: pointer;
 }
 
 .footer {

@@ -3,13 +3,19 @@ import CartWidget from "./CartWidget";
 
 const NavBar = (props) => {
 
+    let activeStyle = {
+        fontWeight: "600",
+        backgroundColor: "#EAE5E3",
+        borderRadius: "10px"
+    }
+
     if (props.navHeader === true) {
         return (
             <nav className="header-nav">
-                <NavLink className="header-link" to="/">Home</NavLink>
-                <NavLink className="header-link" to="/category/laptop">Laptop</NavLink>
-                <NavLink className="header-link" to="/category/tablet">Tablet</NavLink>
-                <NavLink className="header-link" to="/contact">Contact</NavLink>
+                <NavLink className="header-link " to="/" style={({ isActive}) => isActive ? activeStyle : undefined}>Home</NavLink>
+                <NavLink className="header-link" to="/category/laptop" style={({ isActive}) => isActive ? activeStyle : undefined}>Laptop</NavLink>
+                <NavLink className="header-link" to="/category/tablet" style={({ isActive}) => isActive ? activeStyle : undefined}>Tablet</NavLink>
+                <NavLink className="header-link" to="/contact" style={({ isActive}) => isActive ? activeStyle : undefined}>Contact</NavLink>
                 <NavLink to="/cart"><CartWidget /></NavLink>
             </nav>
         )

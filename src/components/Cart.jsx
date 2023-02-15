@@ -86,7 +86,7 @@ const Cart = () => {
                     title: <p>Purchase Completed</p>,
                     html: <p>Buy ID: <strong>{purchaseId}</strong></p>,
                     confirmButtonText: <p onClick={returnHome}>⬅ Return to Home</p>,
-                    allowOutsideClick: false
+                    allowOutsideClick: false,
                 })
             })
             .catch((err) => {
