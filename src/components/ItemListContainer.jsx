@@ -12,6 +12,16 @@ const ItemListContainer = (props) => {
     const [load, setLoad] = useState(false)
     const params = useParams()
 
+    if(load === true) {
+        toast.success("Products loaded :)", {
+            position: "bottom-right",
+            autoClose: 1000,
+            closeOnClick: true,
+            draggable: false,
+            theme: "dark",
+        })
+    }
+
     useEffect(() => {
 
         toast.info("Loading products...", {
@@ -28,13 +38,7 @@ const ItemListContainer = (props) => {
             .then((res) => {
                 setLoad(true)
                 toast.dismiss()
-                toast.success("Products loaded :)", {
-                    position: "bottom-right",
-                    autoClose: 1000,
-                    closeOnClick: true,
-                    draggable: false,
-                    theme: "dark",
-                })
+
                 if (params.categoryId) {
                     const products = res.docs.map(doc => ({ ...doc.data(), id: doc.id }))
                     const filterProducts = products.filter((product) => product.category.includes(params.categoryId))
