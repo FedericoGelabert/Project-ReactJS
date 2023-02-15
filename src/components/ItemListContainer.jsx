@@ -12,10 +12,6 @@ const ItemListContainer = (props) => {
     const [load, setLoad] = useState(false)
     const params = useParams()
 
-    if(load === true) {
-
-    }
-
     useEffect(() => {
 
         toast.info("Loading products...", {
