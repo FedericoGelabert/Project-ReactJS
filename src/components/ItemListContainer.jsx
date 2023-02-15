@@ -9,15 +9,36 @@ import { collection, getDocs } from "firebase/firestore";
 const ItemListContainer = (props) => {
 
     const [products, setProducts] = useState([])
+    const [load, setLoad] = useState(false)
     const params = useParams()
 
+    if(load === true) {
+
+    }
+
     useEffect(() => {
+
+        toast.info("Loading products...", {
+            position: "bottom-right",
+            closeOnClick: true,
+            draggable: false,
+            theme: "dark",
+        })
 
         const productsCollection = collection(db, "products")
         const firestoreOrder = getDocs(productsCollection)
 
         firestoreOrder
             .then((res) => {
+                setLoad(true)
+                toast.dismiss()
+                toast.success("Products loaded :)", {
+                    position: "bottom-right",
+                    autoClose: 1000,
+                    closeOnClick: true,
+                    draggable: false,
+                    theme: "dark",
+                })
                 if (params.categoryId) {
                     const products = res.docs.map(doc => ({ ...doc.data(), id: doc.id }))
                     const filterProducts = products.filter((product) => product.category.includes(params.categoryId))
@@ -26,6 +47,7 @@ const ItemListContainer = (props) => {
                     const products = res.docs.map(doc => ({ ...doc.data(), id: doc.id }))
                     setProducts(products)
                 }
+
             })
             .catch((err) => {
                 toast.error(err, {

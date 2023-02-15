@@ -30,9 +30,13 @@ const ItemCount = ({ stock, onAdd }) => {
     return (
         <div className="counter-container">
             <div className="counter">
-                <button className="counter-subtract" onClick={handleSubtract}>-</button>
-                <p>{counter}</p>
-                <button className="counter-add" onClick={handleAdd}>+</button>
+                <div className="counter-function">
+                    <button className="counter-subtract" onClick={handleSubtract}>-</button>
+                    <div className="counter-number">
+                        <p>{counter}</p>
+                    </div>
+                    <button className="counter-add" onClick={handleAdd}>+</button>
+                </div>
             </div>
             <button className="itemdetail-button" onClick={handleSure}>Buy</button>
             <button className={isActive ? 'confirm-active' : 'confirm-disable'} onClick={handleConfirm}>Confirm</button>

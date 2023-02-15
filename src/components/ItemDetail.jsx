@@ -2,6 +2,8 @@ import ItemCount from "./ItemCount";
 import { useCart } from "./CartContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import InnerImageZoom from 'react-inner-image-zoom';
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 
 const ItemDetail = ({ product }) => {
 
@@ -12,7 +14,7 @@ const ItemDetail = ({ product }) => {
         addProduct(product, quantity)
         setCartLink(true)
     }
-    
+
     if (product.category === "laptop") {
         return (
             <div key={product.id} className="itemdetail-container">
@@ -30,13 +32,22 @@ const ItemDetail = ({ product }) => {
                     <p><span>Ram Memory:</span> {product.ram_memory} GB</p>
                     <p><span>Operating System: </span> {product.operating_system}</p>
                     <p><span>Graphics Coprocessor: </span> {product.graphics_coprocessor}</p>
-
-                    <p className="itemdetail-stock"><span>Stock:</span> {product.stock}</p>
-                    <p><span>Price: </span><s>{product.price_discount}</s><span className="product-price"> ${product.price}</span></p>
-                    {cartLink ? <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link> : <ItemCount stock={product.stock} onAdd={onAdd} />}
+                    <div className="product-price-container">
+                        <p><span className="product-price"> ${product.price}</span><s>{product.price_discount}</s></p>
+                    </div>
+                    {cartLink ?
+                        <div className="go-to-container">
+                            <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link>
+                            <Link to="/" className="go-to-home">Continue shopping </Link>
+                        </div>
+                        : <div>
+                            <ItemCount stock={product.stock} onAdd={onAdd} />
+                            <p className="itemdetail-stock"><span>Stock:</span> {product.stock}</p>
+                        </div> 
+                        }
                 </div>
             </div>
-        )
+        )                    
 
     } else if (product.category === "tablet") {
         return (
@@ -53,9 +64,19 @@ const ItemDetail = ({ product }) => {
                     <p><span>Memory Storage:</span> {product.memory_storage} GB</p>
                     <p><span>Resolution:</span> {product.resolution} px</p>
 
-                    <p className="itemdetail-stock"><span>Stock:</span> {product.stock}</p>
-                    <p><span>Price: </span><s>{product.price_discount}</s><span className="product-price"> ${product.price}</span></p>
-                    {cartLink ? <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link> : <ItemCount stock={product.stock} onAdd={onAdd} />}
+                    <div className="product-price-container">
+                        <p><span className="product-price"> ${product.price}</span><s>{product.price_discount}</s></p>
+                    </div>
+                    {cartLink ?
+                        <div className="go-to-container">
+                            <Link to="/cart" className="go-to-cart-button">Go to Cart 🠮</Link>
+                            <Link to="/" className="go-to-home">Continue shopping </Link>
+                        </div>
+                        : <div>
+                        <ItemCount stock={product.stock} onAdd={onAdd} />
+                        <p className="itemdetail-stock"><span>Stock:</span> {product.stock}</p>
+                    </div> 
+                    }
                 </div>
             </div>
         )
