@@ -160,7 +160,7 @@ const Cart = () => {
                                         <input type="text" placeholder="Surname" onInput={surnameInput} required />
                                         <input type="number" placeholder="Phone Number" onInput={phoneInput} required />
                                         <input type="text" placeholder="Country" onInput={countryInput} />
-                                        <input type="email" placeholder="Email" required onKeyDown={activeEmail} onInput={emailInput} />
+                                        <input type="email" placeholder="Email" required onKeyUp={activeEmail} onInput={emailInput} />
                                         <input type="email" placeholder="Repeat email" required disabled={inputDisabled} onKeyUp={confirmButton} />
                                     </div>
                                     <div className="checkout-submit">
