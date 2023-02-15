@@ -14,6 +14,7 @@ const Cart = () => {
     const [inputDisabled, setInputDisabled] = useState(true)
     const [buttonDisabled, setButtonDisabled] = useState(true)
     const [confirmDisabled, setConfirmDisabled] = useState(true)
+    const [emailValue, setEmailValue] = useState("")
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
     const [phone, setPhone] = useState("")
@@ -25,6 +26,7 @@ const Cart = () => {
     const navigate = useNavigate();
 
     const activeEmail = (e) => {
+        setEmailValue(e.target.value)
         if (e.target.value.includes("@")) {
             setInputDisabled(false)
         }
@@ -52,7 +54,7 @@ const Cart = () => {
 
     const returnHome = () => {
         clearCartBuy()
-        return navigate("/")
+        navigate("/")
     }
 
     const clearCartBuy = () => {
@@ -97,19 +99,21 @@ const Cart = () => {
                 })
             })
 
-            setButtonDisabled(true)
+        setButtonDisabled(true)
     }
 
     const activeBuyButton = (e) => {
         e.preventDefault()
-        if(confirmDisabled === false) {
+        if (confirmDisabled === false) {
             setButtonDisabled(false)
         }
     }
 
     const confirmButton = (e) => {
-        if (e.target.value.includes("@")) {
+        if (e.target.value === emailValue) {
             setConfirmDisabled(false)
+        } else {
+            setConfirmDisabled(true)
         }
     }
 
@@ -158,15 +162,15 @@ const Cart = () => {
                                         <input type="text" placeholder="Country" onInput={countryInput} />
                                         <input type="email" placeholder="Email" required onKeyDown={activeEmail} onInput={emailInput} />
                                         <input type="email" placeholder="Repeat email" required disabled={inputDisabled} onKeyUp={confirmButton} />
-                                    </div>  
-                                <div className="checkout-submit">
-                                    {
-                                        confirmDisabled ? 
-                                        <button className="checkout-submit-button" type="text" style={{ backgroundColor: 'rgb(200,200,200)' }} onClick={activeBuyButton} disabled={confirmDisabled}>Confirm</button> :
-                                        <button className="checkout-submit-button" type="text" style={{ backgroundColor: 'black' }} onClick={activeBuyButton} disabled={confirmDisabled}>Confirm</button>
-                                    }
-                                    <button className="checkout-reset" type="reset">Reset</button>
-                                </div>
+                                    </div>
+                                    <div className="checkout-submit">
+                                        {
+                                            confirmDisabled ?
+                                                <button className="checkout-submit-button" type="text" style={{ backgroundColor: 'rgb(200,200,200)' }} onClick={activeBuyButton} disabled={confirmDisabled}>Confirm</button> :
+                                                <button className="checkout-submit-button" type="text" style={{ backgroundColor: 'black' }} onClick={activeBuyButton} disabled={confirmDisabled}>Confirm</button>
+                                        }
+                                        <button className="checkout-reset" type="reset">Reset</button>
+                                    </div>
                                 </form>
                             </div>
                             <div className="checkout-info">
