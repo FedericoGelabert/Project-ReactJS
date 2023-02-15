@@ -2,8 +2,6 @@ import ItemCount from "./ItemCount";
 import { useCart } from "./CartContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import InnerImageZoom from 'react-inner-image-zoom';
-import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 
 const ItemDetail = ({ product }) => {
 
