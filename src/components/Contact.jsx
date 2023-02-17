@@ -55,7 +55,7 @@ const Contact = () => {
                             {
                                 submitDisabled ? 
                                 <button type="submit" style={{backgroundColor:'rgb(180,180,180)'}} onClick={contactSubmit} disabled={submitDisabled}>Submit</button> :
-                                <button type="submit" style={{backgroundColor:'rgb(255,80,80)'}} onClick={contactSubmit} disabled={submitDisabled}>Submit</button>
+                                <button type="submit" style={{backgroundColor:'rgb(0,0,0)'}} onClick={contactSubmit} disabled={submitDisabled}>Submit</button>
                             }
                             <button type="reset">Reset</button>
                         </div>

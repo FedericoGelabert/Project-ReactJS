@@ -7,13 +7,6 @@ An interactive project built with React. **BuyIt** is a simulated application ba
 
 https://project-react-buyit.netlify.app
 
-### Installation
-
-```
-git clone https://github.com/FedericoGelabert/Project-ReactJS.git
-npm install
-npm start
-```
 
 ### Dependencies
 
@@ -27,7 +20,18 @@ npm start
 
 ![BuyIt GIF](https://res.cloudinary.com/federicog/image/upload/v1676489826/react-project/buyit-gif_b6ibqx.gif)
 
+
+### Installation
+
+```
+git clone https://github.com/FedericoGelabert/Project-ReactJS.git
+
+npm install
+
+npm start
+```
+
+
 ### Contact
 
 Federico Gelabert - [Linkedin](https://www.linkedin.com/in/federico-gelabert-2b656b238/)
-gelabert.fede@gmail.com
