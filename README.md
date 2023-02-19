@@ -32,6 +32,14 @@ npm start
 ```
 
 
+### To-do List
+
+- [ ] Product Detail image zoom.
+- [ ] More categories.
+- [ ] Product Detail > Related products section.
+- [ ] Favourite products logic.
+ 
+
 ### Contact
 
 Federico Gelabert - [Linkedin](https://www.linkedin.com/in/federico-gelabert-2b656b238/)

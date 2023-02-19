@@ -9,7 +9,6 @@ const CartItem = ({ product, id }) => {
         <div>
             <div key={id} className="cart-card">
                 <div className="cart-card-info-res">
-
                 <img src={product.img} alt={product.name}></img>
                 <p className="cart-card-name-res">{product.name}</p>
                 <p className="cart-card-desc-res">{product.description}</p>

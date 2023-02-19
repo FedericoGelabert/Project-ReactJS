@@ -138,6 +138,10 @@ a {
   z-index: 10;
 }
 
+.itemlist-product {
+  display: inline-block;
+}
+
 .itemlist {
   display: flex;
   flex-direction: row;
@@ -910,7 +914,6 @@ a {
   }
 }
 
-
 @media (max-width: 1440px) {
   .main-container {
     background-image: url(https://res.cloudinary.com/federicog/image/upload/v1676588199/my-proyect-css/home-b3_xr92n9.png);
@@ -1141,6 +1144,10 @@ a {
   .itemdetail-name {
     font-size: 1.5em;
   }
+  .cart-header {
+    flex-direction: column;
+    height: 150px;
+  }
   .cart-no-product-container {
     height: 70vh;
   }
@@ -1164,10 +1171,6 @@ a {
   }
   .checkout-submit-button {
     width: 40%;
-  }
-  .cart-header {
-    flex-direction: column;
-    height: 150px;
   }
   .error-container h1 {
     font-size: 4em;

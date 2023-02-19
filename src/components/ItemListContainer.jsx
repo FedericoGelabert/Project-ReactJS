@@ -63,18 +63,14 @@ const ItemListContainer = (props) => {
     if (!params.categoryId) {
         return (
             <div className="itemlist-container">
-                <div className="itemlist">
-                    <ItemList products={products} />
-                </div>
+                <ItemList products={products} />
             </div>
         )
     } else if (params.categoryId === "laptop" || "tablet") {
         return (
             <div className="itemlist-container">
                 <h2 className="itemlist-category">Category {params.categoryId}</h2>
-                <div className="itemlist">
-                    <ItemList products={products} />
-                </div>
+                <ItemList products={products} />
             </div>
         )
     }
